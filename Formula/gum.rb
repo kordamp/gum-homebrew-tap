@@ -2,24 +2,24 @@
 class Gum < Formula
   desc "Gum is a Gradle/Maven/jbang wrapper written in Go"
   homepage "https://github.com/kordamp/gm"
-  version "0.7.2"
+  version "0.8.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/kordamp/gm/releases/download/v0.7.2/gm_Darwin_x86_64.zip"
-    sha256 "747852bb8eb8566450b1fd41283b2d6f05557bbaed5d4e47a2c6a80bb3158c59"
+    url "https://github.com/kordamp/gm/releases/download/v0.8.0/gm_Darwin_x86_64.zip"
+    sha256 "0c4bc68ff2c7c37f437e16e84fa2b10407c55816907eb9a9119314e115db8c68"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/kordamp/gm/releases/download/v0.7.2/gm_Linux_x86_64.tar.gz"
-      sha256 "583c2517c8e80a07ca1541d0e1dcc90fa15bda54a3afc0cdb6ad1f98ace6014f"
+      url "https://github.com/kordamp/gm/releases/download/v0.8.0/gm_Linux_x86_64.tar.gz"
+      sha256 "e68c7a41c1403bcfb0b624850823b2e4a048a55f4c62cd2e04ea8c4ebb17a9cd"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/kordamp/gm/releases/download/v0.7.2/gm_Linux_arm64.tar.gz"
-        sha256 "40624a69d2efa02d5a0d29a6d588c73804b4a3baacc1589f6923ada0bba932f9"
+        url "https://github.com/kordamp/gm/releases/download/v0.8.0/gm_Linux_arm64.tar.gz"
+        sha256 "cc789ed854abac1c1d3a5d212ef6008d83b96fb267c7ddb77336627fd9e69ebb"
       else
-        url "https://github.com/kordamp/gm/releases/download/v0.7.2/gm_Linux_armv6.tar.gz"
-        sha256 "9ee34fd89bf943914165c2bc60dc73b7debec60ae897f9f56dc10c8d99ee5a88"
+        url "https://github.com/kordamp/gm/releases/download/v0.8.0/gm_Linux_armv6.tar.gz"
+        sha256 "37de26a10553172aac3b587d85f208c6e71b17f06549db2fca2f0826fb2f9338"
       end
     end
   end
