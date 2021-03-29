@@ -11,19 +11,19 @@ class Gum < Formula
 
   if OS.mac?
     url "https://github.com/kordamp/gm/releases/download/v0.10.0/gm_Darwin_x86_64.zip"
-    sha256 "8d2d65bcdedf79d041e549523db4615beced764747fc547f7ee4f89e67efc582"
+    sha256 "f95292572bd128b14eb81df384b8189d402ce67220a6c84739fdf7ce35d4d5b9"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/kordamp/gm/releases/download/v0.10.0/gm_Linux_x86_64.tar.gz"
-    sha256 "f246eb8c592a9902bf8f22248c630d9d75399143d6da0b8e0e3338cc808b511f"
+    sha256 "f325e6617f278ae24d76337ac9be7eff6aaa830d0ced91ead6e831fbf83374cf"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url "https://github.com/kordamp/gm/releases/download/v0.10.0/gm_Linux_armv6.tar.gz"
-    sha256 "24ed19247c88ade05300a23bb9d340ba316c7b88c9cad4c08bb25771f8382474"
+    sha256 "be2f410126bc7dcbbe765e0a1d91cc04060523513b0a4520491a01d33344cee2"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/kordamp/gm/releases/download/v0.10.0/gm_Linux_arm64.tar.gz"
-    sha256 "71ce16b65d21b09371d7702b02ce028b78da31c1f4dbcbdcc961a5bc1eb2a6b4"
+    sha256 "90ae492c0b821a58cd75bc1a1a2e9bc1ded25a860482e5e9c2f19ef0e6350b0f"
   end
 
   def install
