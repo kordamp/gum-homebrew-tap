@@ -5,28 +5,52 @@
 class Gum < Formula
   desc "Gum is a Gradle/Maven/Ant/Bach/JBang wrapper written in Go"
   homepage "https://github.com/kordamp/gm"
-  version "0.10.0"
+  version "0.11.0"
   license "Apache-2.0"
-  bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/kordamp/gm/releases/download/v0.10.0/gm_Darwin_x86_64.zip"
-    sha256 "f95292572bd128b14eb81df384b8189d402ce67220a6c84739fdf7ce35d4d5b9"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kordamp/gm/releases/download/v0.10.0/gm_Linux_x86_64.tar.gz"
-    sha256 "f325e6617f278ae24d76337ac9be7eff6aaa830d0ced91ead6e831fbf83374cf"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/kordamp/gm/releases/download/v0.10.0/gm_Linux_armv6.tar.gz"
-    sha256 "be2f410126bc7dcbbe765e0a1d91cc04060523513b0a4520491a01d33344cee2"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/kordamp/gm/releases/download/v0.10.0/gm_Linux_arm64.tar.gz"
-    sha256 "90ae492c0b821a58cd75bc1a1a2e9bc1ded25a860482e5e9c2f19ef0e6350b0f"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/kordamp/gm/releases/download/v0.11.0/gm_Darwin_arm64.zip"
+      sha256 "ecda38c28b8d61896a0c9337858bf402acc59df1a07aead92521f48f287f3904"
+
+      def install
+        bin.install "gm"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/kordamp/gm/releases/download/v0.11.0/gm_Darwin_x86_64.zip"
+      sha256 "e8121678c8565616194fe70025ac22e1a5819484afe41d79688253d018f80083"
+
+      def install
+        bin.install "gm"
+      end
+    end
   end
 
-  def install
-    bin.install "gm"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/kordamp/gm/releases/download/v0.11.0/gm_Linux_x86_64.tar.gz"
+      sha256 "b21661813ef2c92632f29d10c7fc44cb3e64a4a8d15879870f8273dd1bc54bf3"
+
+      def install
+        bin.install "gm"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kordamp/gm/releases/download/v0.11.0/gm_Linux_arm64.tar.gz"
+      sha256 "19f9fca563c8939d4912138cca9f230a0da717aa1b2c76630a432edcebb9058e"
+
+      def install
+        bin.install "gm"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/kordamp/gm/releases/download/v0.11.0/gm_Linux_armv6.tar.gz"
+      sha256 "6600346d3a454254ae7f1065f38fea56a79ec5a17dfac81c79ae2c100e7f3d14"
+
+      def install
+        bin.install "gm"
+      end
+    end
   end
 end
