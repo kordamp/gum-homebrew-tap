@@ -1,10 +1,10 @@
-# Generated with JReleaser 1.4.0 at 2023-01-21T09:44:31.363270835Z
+# Generated with JReleaser 1.4.0 at 2023-02-05T14:22:58.241429085Z
 class Pomchecker < Formula
   desc "Checks POM files may be uploaded to Maven Central"
   homepage "https://kordamp.org/pomchecker"
-  url "https://github.com/kordamp/pomchecker/releases/download/v1.6.0/pomchecker-1.6.0.zip"
-  version "1.6.0"
-  sha256 "721de939fa9a1340592e37b611731797c615846d246fac7fabb3aafeaeb8e1eb"
+  url "https://github.com/kordamp/pomchecker/releases/download/v1.7.0/pomchecker-1.7.0.zip"
+  version "1.7.0"
+  sha256 "34cc10c14b86ef01b186498247e5b82ee21fefdc9557deb5ff55e2a04a161599"
   license "Apache-2.0"
 
   depends_on "openjdk@8"
@@ -16,6 +16,6 @@ class Pomchecker < Formula
 
   test do
     output = shell_output("#{bin}/pomchecker --version")
-    assert_match "1.6.0", output
+    assert_match "1.7.0", output
   end
 end
