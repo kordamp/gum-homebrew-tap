@@ -1,29 +1,25 @@
-# Generated with JReleaser 1.5.0-SNAPSHOT at 2023-02-06T20:28:32.478135496Z
+# Generated with JReleaser 1.5.0 at 2023-03-05T13:21:22.766473124Z
 class Jarviz < Formula
   desc "JAR file analyzer"
   homepage "https://github.com/kordamp/jarviz"
-  version "0.2.0"
+  version "0.3.0"
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/kordamp/jarviz/releases/download/v0.2.0/jarviz-standalone-0.2.0-linux-aarch64.zip"
-    sha256 "fe13f1edfabe6f76b831b4de7e7478b8fb9ab3749f5706ff29e154cd2d6b0575"
+    url "https://github.com/kordamp/jarviz/releases/download/v0.3.0/jarviz-standalone-0.3.0-linux-aarch64.zip"
+    sha256 "8ae25dedae9d967e29910b24d1e1bd8676b6c26da9c70db1fbe630ab37b267fa"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kordamp/jarviz/releases/download/v0.2.0/jarviz-standalone-0.2.0-linux-x86_32.zip"
-    sha256 "4ee54f8259de070c4cef7ec4d482809b1d97f1096caa606b7200108c0e3544fe"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kordamp/jarviz/releases/download/v0.2.0/jarviz-standalone-0.2.0-linux-x86_64.zip"
-    sha256 "5de5bd7fb689ac23676e85bbc8e1b348b3d81ac931015a614bfe09e18b1a1591"
+    url "https://github.com/kordamp/jarviz/releases/download/v0.3.0/jarviz-standalone-0.3.0-linux-x86_64.zip"
+    sha256 "1cefeab0834bca70ede3c091febc57e184911ae88a8b3d838e2cfaa817c79b46"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/kordamp/jarviz/releases/download/v0.2.0/jarviz-standalone-0.2.0-osx-aarch64.zip"
-    sha256 "bff544c1f7bfbef81a6a2c6a71b4e4fa03a93005a8e7d35d4df91dd9b49a045a"
+    url "https://github.com/kordamp/jarviz/releases/download/v0.3.0/jarviz-standalone-0.3.0-osx-aarch64.zip"
+    sha256 "6e696c649f56687c7b6c4d221d86811002954d5eddb8e4f1f3dcddc879f319ec"
   end
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/kordamp/jarviz/releases/download/v0.2.0/jarviz-standalone-0.2.0-osx-x86_64.zip"
-    sha256 "d924af8a88375222e79553ecb9a2213f8f9e9545a6f1a1e74dfd9ddf71c6a605"
+    url "https://github.com/kordamp/jarviz/releases/download/v0.3.0/jarviz-standalone-0.3.0-osx-x86_64.zip"
+    sha256 "1ed5347cadbc3642f4f7a791f99d7b5eb5ede2caa77f8d867f3a6ce09e316b47"
   end
 
 
@@ -44,6 +40,6 @@ class Jarviz < Formula
 
   test do
     output = shell_output("#{bin}/jarviz --version")
-    assert_match "0.2.0", output
+    assert_match "0.3.0", output
   end
 end
